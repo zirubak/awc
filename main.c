@@ -12,13 +12,25 @@
 
 int main(void){
 
-	int a = 10;
-	int b = 20;
+	int retval;
+	int x = 10;
+	int y = 10;
 
-	printf("a is %d. b is %d. \n", a, b);
+	int (*match)(void *key1, void *key2);
 
-	swap2(&a, &b, sizeof(int));
+	int mach_int(void *a, void *b){
+		if(*(int *)a == *(int *)b){
+			return 1;
+		}else{
+			return 0;
+		}
+	}
 
-	printf("a is %d. b is %d. \n", a, b);
+	match = mach_int;
+
+	retval = match(&x,&y);
+
+	printf("the result is %d", retval);
+
 }
 
