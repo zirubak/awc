@@ -12,25 +12,19 @@
 
 int main(void){
 
-	int retval;
-	int x = 10;
-	int y = 10;
+	char *str;
 
-	int (*match)(void *key1, void *key2);
+	// initial memory allocation
+	str = (char *)malloc(15);
+	strcpy(str, "tutorialspoint");
+	printf("String = %s, Address = %u\n", str, str);
 
-	int mach_int(void *a, void *b){
-		if(*(int *)a == *(int *)b){
-			return 1;
-		}else{
-			return 0;
-		}
-	}
+	//reallocatinge memory
+	str = (char *)realloc(str, 15);
+	strcat(str, ".com");
+	printf("String = %s, Address = %u\n", str, str);
 
-	match = mach_int;
-
-	retval = match(&x,&y);
-
-	printf("the result is %d", retval);
-
+	free(str);
+	return 0;
 }
 
