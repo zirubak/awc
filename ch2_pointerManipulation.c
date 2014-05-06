@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include "awc.h"
 
 int swap2(void *x, void *y, int size){
 	void *tmp;
@@ -22,16 +23,6 @@ int swap2(void *x, void *y, int size){
 	return 0;
 }
 
-int main(void){
 
-	int a = 10;
-	int b = 20;
-
-	printf("a is %d. b is %d. \n", a, b);
-
-	swap2(&a, &b, sizeof(int));
-
-	printf("a is %d. b is %d. \n", a, b);
-}
 
 
