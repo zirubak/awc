@@ -8,23 +8,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "awc.h"
+#include "fact.h"
 
 int main(void){
 
-	char *str;
+	int rtn = 0;
+	rtn = fact(4);
 
-	// initial memory allocation
-	str = (char *)malloc(15);
-	strcpy(str, "tutorialspoint");
-	printf("String = %s, Address = %u\n", str, str);
+	printf("Basic recursion: 4! is %d", rtn);
 
-	//reallocatinge memory
-	str = (char *)realloc(str, 15);
-	strcat(str, ".com");
-	printf("String = %s, Address = %u\n", str, str);
-
-	free(str);
 	return 0;
 }
 
