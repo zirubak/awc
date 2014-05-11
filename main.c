@@ -8,14 +8,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include "fact.h"
+#include "facttail.h"
 
 int main(void){
 
 	int rtn = 0;
-	rtn = fact(4);
+	rtn = facttail(4,1);
 
-	printf("Basic recursion: 4! is %d", rtn);
+	printf("tail recursion: 4! is %d", rtn);
 
 	return 0;
 }
